@@ -1,0 +1,361 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Albert Sans", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    flex: 1;
+}
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 12%; /* Reducir el padding vertical */
+    /*backdrop-filter: blur(50px);*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+
+/* Estilos para los iconos del menú */
+.icons {
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.logo {
+    width: 100px; /* Ancho del logo */
+    height: auto; /* Altura automática para mantener la proporción */
+    position: relative; /* Cambiado a relativo para mantener el flujo del documento */
+    top: 0; /* Ajustar la posición superior */
+    left: 0; /* Ajustar la posición izquierda */
+}
+
+.nav-link{
+    color: white !important;
+}
+
+.nav-link:hover{
+    color: #80bdff !important;
+}
+
+.feature {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+}
+
+.items-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Contenedor de Productos del Catalogo*/
+.product {
+    overflow: hidden;
+    background-size: cover;
+    color: #fff3f4;
+    text-shadow: 2px 2px #000000;
+    font-weight: bold;
+    text-align: center;
+    width: 350px;
+    height: 340px;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.2rem;
+    margin: 2rem;
+    box-shadow: 5px 15px 25px #03000057;
+}
+
+
+
+
+/* Estilo para el título del producto */
+.product .product-title {
+    font-size: 1.5rem; /* Cambia el tamaño del título */
+    font-weight: bold; /* Pone el título en negrita */
+    margin-bottom: 10px; /* Ajusta el margen inferior del título */
+}
+
+/* Letra en Descripcion y Precio del Producto */
+.product .product-price {
+    font-size: 18px;
+}
+
+/*Tamaño del Titulo del apartado*/
+.products h2 {
+    font-size: 2.5rem;
+}
+
+.product a:link,
+    /* Agrega estilos a la clase para el botón de compra */
+
+.comprar-button {
+    color: #fff6ef !important;
+    display: inline-block;
+    text-decoration: none;
+    background-color:  #6f42c1;
+    padding: 1.2rem 3rem;
+    border-radius: 1rem;
+    margin-top: -0.5rem;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.product a:hover {
+    transform: scale(1.1);
+    color: #ececec;
+    cursor: pointer;
+}
+
+.product img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el contenedor del carrito */
+.cart-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 70px;
+    margin-top: 27px;
+}
+
+/* Estilos para el ícono de carrito */
+.cart-icon .bx-cart {
+    font-size: 35px;
+    color: #f0f0f0
+}
+
+/* Estilos para el número de elementos en el carrito */
+#cart-count {
+    position: absolute;
+    background-color: #0067b8;
+    color: white;
+    border-radius: 50%;
+    padding: 1px 7.5px;
+    font-size: 14px;
+    margin-left: 24px;
+    margin-top: -44px;
+}
+
+#logo-carro {
+    cursor: pointer;
+}
+
+
+.carrito-items {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#carrito-lista {
+    list-style: none;
+    padding: 0;
+}
+
+#carrito-lista li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#precio {
+    text-align: right;
+    font-weight: bold;
+}
+
+#openModalButton{
+    display: block;
+    margin: 100px auto; /* Alineación horizontal en el centro */
+    padding: 7px 10px;
+    font-weight: 550;
+}
+
+/* Estilos para cada elemento de la lista del carrito */
+.product-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    height: 100px; /* Ajusta la altura deseada */
+    overflow: hidden; /* Evita las barras de desplazamiento y oculta contenido adicional */
+}
+
+/* Estilos para la imagen del producto */
+.item-image {
+    max-width: 80px; /* Ajusta el ancho de la imagen según sea necesario */
+    margin-right: 10px; /* Espacio entre la imagen y otros elementos */
+}
+
+/* Estilos para el nombre del producto */
+.item-name {
+    font-weight: bold;
+    margin-left: 10px;
+    position: absolute;
+    margin-left: 200px;
+}
+
+/* Estilos para el precio, la cantidad y los botones de aumento y disminución */
+.item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea todos los elementos verticalmente en el centro */
+}
+
+/* Estilos para el precio del producto */
+.item-price {
+    font-weight: bold;
+    color: #107c10;
+    position: absolute;
+    margin-left: 595px;
+}
+
+/* Estilos para la cantidad del producto */
+.item-quantity {
+    font-size: 0.9rem;
+    background-color: #0000002a;
+    padding: 5px 6px;
+    border-radius: 5px;
+    position: absolute;
+    margin-left: 440px;
+}
+
+/* Estilos para los botones de aumentar, disminuir y eliminar */
+.boton-aumentar {
+    background-color: #0000002a;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 1px 10px;
+    border-radius: 7px;
+    margin-top: 5px;
+    position: absolute;
+    margin-left: 800px;
+}
+.boton-disminuir {
+    background-color: #0000002a;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 1px 10px;
+    border-radius: 7px;
+    margin-top: 5px;
+    position: absolute;
+    margin-left: 900px;
+
+}
+.boton-aumentar:hover, .boton-disminuir:hover {
+    transform: scale(1.180);
+}
+
+/* Estilos para el botón de eliminar (ícono de basurero) */
+.delete-button {
+    background-color: #ff0000;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1100px;
+    position: absolute;
+
+}
+
+/* Estilos para el ícono de basurero en el botón de eliminar */
+.delete-button i {
+    color: white;
+    font-size: 1rem;
+}
+
+.delete-button:hover {
+    transform: scale(1.180);
+}
+/* Tus estilos para pantallas más grandes aquí */
+
+
+#carrito-lista li {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    height: auto;
+}
+
+.item-name {
+    position: relative;
+    margin-left: 0;
+}
+
+.item-price{
+    position: relative;
+    margin-left: 0;
+    margin-top: 10px;
+}
+.item-quantity{
+    position: relative;
+    margin-left: -100px;
+    margin-top: 10px;
+
+}
+.boton-aumentar{
+    position: relative;
+    margin-left: 10px;
+    margin-top: -32px;
+}
+.boton-disminuir{
+    position: relative;
+    margin-left: 120px;
+    margin-top: -31px;
+}
+.delete-button{
+    position: relative;
+    margin-left: 280px;
+    margin-top: -20px;
+    transform: scale(1.180);
+}
+#openModalButton {
+    width: 50%; /* Ancho completo para dispositivos móviles */
+    max-width: 300px;
+    cursor: pointer;
+}
